@@ -1,0 +1,23 @@
+<?php
+function fibonacci_sum($n)
+{
+    $sum = 0;
+    $prev = 0;
+    $curr = 1;
+
+    for ($i = 1; $i <= $n; $i++) {
+        if ($i <= 2) {
+            $sum += $i;
+        } else {
+            $next = $prev + $curr;
+            $sum += $next;
+            $prev = $curr;
+            $curr = $next;
+        }
+    }
+
+    echo $sum;
+}
+$n = 10;
+fibonacci_sum($n);
+?>
